@@ -108,7 +108,7 @@ class MainActivity : AppCompatActivity() {
                     val scoreN = 0;
                     score.text = "Score $scoreN"
 
-                    startGame()
+                    finish()
                 }
             }
         }
