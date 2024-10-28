@@ -26,6 +26,7 @@ class SimonAdapter(val context: Context) : BaseAdapter() {
         return shuffledImages.size
     }
 
+    // Método para obtener la vista
     override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
         var gridView: View? = convertView
         if (gridView == null) {
@@ -60,6 +61,4 @@ class SimonAdapter(val context: Context) : BaseAdapter() {
             notifyDataSetChanged()
         }, 1000)
     }
-
-
 }

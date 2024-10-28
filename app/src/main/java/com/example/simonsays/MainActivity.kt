@@ -1,6 +1,7 @@
 package com.example.simonsays
 
 import android.annotation.SuppressLint
+import android.media.MediaPlayer
 import android.os.Bundle
 import android.os.Handler
 import android.widget.AdapterView
@@ -29,6 +30,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_main)
+
 
         // Inicialización de las vistas
         gridView = findViewById(R.id.gridView)
@@ -89,6 +91,7 @@ class MainActivity : AppCompatActivity() {
         // Configurar el escuchador de clics en la vista de la cuadrícula
         gridView.onItemClickListener = AdapterView.OnItemClickListener { _, _, position, _ ->
             if (currentStep < colorCorrect.size) {
+
                 // Verificar si el color seleccionado es correcto
                 if (colorCorrect[currentStep] == position) {
                     currentStep++
@@ -98,6 +101,7 @@ class MainActivity : AppCompatActivity() {
                         score.text = "Score: " + (level - 1).toString()
                     }
                 } else {
+
                     // Mostrar un mensaje de error si el color seleccionado es incorrecto
                     Toast.makeText(this, "Felicidades! Has llegado al nivel " + (level - 1), Toast.LENGTH_LONG).show()
                     gridView.isEnabled = false
